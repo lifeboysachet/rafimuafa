@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Rafi</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .modal-body {
+            font-size: 14px;
+        }
+        .input-group {
+            margin-bottom: 10px;
+        }
+        .fan-status {
+            font-weight: bold;
+        }
+        .lampu {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 10px;
+            display: inline-block;
+            background-color: gray;
+        }
+        .nyala {
+            background-color: yellow;
+        }
+        .mati {
+            background-color: red;
+        }.lampu {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 10px;
+            display: inline-block;
+            background-color: gray;
+        }
+        .nyala {
+            background-color: yellow;
+        }
+        .mati {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container">
+          <a class="navbar-brand" href="#">Rafi Mu'afa</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Tentang</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Portofolio</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Kontak</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+   </nav>
+   <!-- End Navbar -->
+     
+   <!-- Jumbotron -->
+   <section class="jumbotron text-center">
+      <img src="img/rafimuafa.jpeg" alt="Rafi muafa" width="200">
+      <h1 class="display-4">Halo semuanya</h1>
+      <p class="lead">Perkenalan Nama Saya Muhammad Rafi Muafa, Mahasiswa Semester 1 Studi Tehnik Informatika Kampus STIKOM MUHAMMADIYAH BATAM</p>
+   </section>
+   <!-- End Jumbotron -->
+
+   <!-- About Section -->
+   <section class="container text-center">
+       <div class="row justify-content-center">
+           <div class="col-md-4 mb-4"> <!-- Card 1 -->
+               <div class="card" style="width: 100%;">
+                   <img src="img/fotocomputer.jpeg" class="card-img-top" alt="3 Resistor">
+                   <div class="card-body">
+                       <h5 class="card-title">3 Resistor</h5>
+                       <p class="card-text">Pelajari tentang 3 resistor dalam konfigurasi paralel.</p>
+                       <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resistorModal">Info Selengkapnya</button>
+                   </div>
+               </div>
+           </div>
+
+           <div class="col-md-4 mb-4"> <!-- Card 2 -->
+               <div class="card" style="width: 100%;">
+                   <img src="img/konversisuhu.jpeg" class="card-img-top" alt="Konversi Suhu">
+                   <div class="card-body">
+                       <h5 class="card-title">Konversi Suhu</h5>
+                       <p class="card-text">Konversi suhu antara Celsius, Fahrenheit, dan Kelvin.</p>
+                       <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tempConversionModal">Info Selengkapnya</button>
+                   </div>
+               </div>
+           </div>
+
+           <div class="col-md-4 mb-4"> <!-- Card 3 -->
+               <div class="card" style="width: 100%;">
+                   <img src="img/kalkulator.jpeg" class="card-img-top" alt="Kalkulator">
+                   <div class="card-body">
+                       <h5 class="card-title">Kalkulator</h5>
+                       <p class="card-text">Kalkulator sederhana untuk aritmetika dasar.</p>
+                       <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#calculatorModal">Info Selengkapnya</button>
+                   </div>
+               </div>
+           </div>
+
+           <div class="col-md-4 mb-4"> <!-- Kipas Angin Card -->
+               <div class="card" style="width: 100%;">
+                   <img src="img/kipas angin.JPG" class="card-img-top" alt="Kipas Angin">
+                   <div class="card-body">
+                       <h5 class="card-title">Kipas Angin</h5>
+                       <p class="card-text">Program untuk mengontrol kipas angin.</p>
+                       <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fanModal">Info Selengkapnya</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- Modals -->
+   <!-- 3 Resistor Modal -->
+   <div class="modal fade" id="resistorModal" tabindex="-1" aria-labelledby="resistorModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <h5 class="modal-title" id="resistorModalLabel">Informasi 3 Resistor</h5>
+                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                   <p>Pilih warna resistor untuk menghitung total resistansi paralel:</p>
+                   <div class="input-group mb-3">
+                       <span class="input-group-text">R1</span>
+                       <select id="color1" class="form-select">
+                           <option value="0">Hitam</option>
+                           <option value="1">Coklat</option>
+                           <option value="2">Merah</option>
+                           <option value="3">Oranye</option>
+                           <option value="4">Kuning</option>
+                           <option value="5">Hijau</option>
+                           <option value="6">Biru</option>
+                           <option value="7">Ungu</option>
+                           <option value="8">Abu-abu</option>
+                           <option value="9">Putih</option>
+                       </select>
+                   </div>
+                   <div class="input-group mb-3">
+                       <span class="input-group-text">R2</span>
+                       <select id="color2" class="form-select">
+                           <option value="0">Hitam</option>
+                           <option value="1">Coklat</option>
+                           <option value="2">Merah</option>
+                           <option value="3">Oranye</option>
+                           <option value="4">Kuning</option>
+                           <option value="5">Hijau</option>
+                           <option value="6">Biru</option>
+                           <option value="7">Ungu</option>
+                           <option value="8">Abu-abu</option>
+                           <option value="9">Putih</option>
+                       </select>
+                   </div>
+                   <div class="input-group mb-3">
+                       <span class="input-group-text">R3</span>
+                       <select id="color3" class="form-select">
+                           <option value="0">Hitam</option>
+                           <option value="1">Coklat</option>
+                           <option value="2">Merah</option>
+                           <option value="3">Oranye</option>
+                           <option value="4">Kuning</option>
+                           <option value="5">Hijau</option>
+                           <option value="6">Biru</option>
+                           <option value="7">Ungu</option>
+                           <option value="8">Abu-abu</option>
+                           <option value="9">Putih</option>
+                       </select>
+                   </div>
+                   <button class="btn btn-success" onclick="calculateParallel()">Hitung</button>
+                   <p id="parallelResult" class="mt-3"></p>
+               </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="container text-center mt-5">
+    <h1>Simulasi Lampu Seri</h1>
+    <p>Jika salah satu lampu dimatikan, semua lampu akan mati.</p>
+
+    <!-- Menampilkan Lampu Seri (5 Lampu) -->
+    <div id="lampu1" class="lampu"></div>
+    <div id="lampu2" class="lampu"></div>
+    <div id="lampu3" class="lampu"></div>
+    <div id="lampu4" class="lampu"></div>
+    <div id="lampu5" class="lampu"></div>
+
+    <div class="mt-4">
+        <button class="btn btn-primary" id="toggleBtn">Nyalakan Lampu Seri</button>
+        <button class="btn btn-danger" id="toggleBtn2">Matikan Lampu Seri</button>
+    </div>
+</div>
+
+
+   <!-- Temperature Conversion Modal -->
+   <div class="modal fade" id="tempConversionModal" tabindex="-1" aria-labelledby="tempConversionModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <h5 class="modal-title" id="tempConversionModalLabel">Konversi Suhu</h5>
+                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                   <p>Masukkan suhu untuk konversi:</p>
+                   <div class="mb-3">
+                       <input type="number" id="tempInput" class="form-control" placeholder="Masukkan suhu">
+                   </div>
+                   <div class="mb-3">
+                       <select id="tempUnit" class="form-select">
+                           <option value="celsius">Celsius</option>
+                           <option value="fahrenheit">Fahrenheit</option>
+                           <option value="kelvin">Kelvin</option>
+                       </select>
+                   </div>
+                   <button class="btn btn-primary" onclick="convertTemperature()">Konversi</button>
+                   <p id="conversionResult" class="mt-3"></p>
+               </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <!-- Calculator Modal -->
+   <div class="modal fade" id="calculatorModal" tabindex="-1" aria-labelledby="calculatorModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <h5 class="modal-title" id="calculatorModalLabel">Kalkulator</h5>
+                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                   <p>Gunakan kalkulator untuk perhitungan aritmatika dasar:</p>
+                   <div id="calcResult" class="mb-3">0</div>
+                   <div>
+                       <button onclick="appendToCalculator(7)">7</button>
+                       <button onclick="appendToCalculator(8)">8</button>
+                       <button onclick="appendToCalculator(9)">9</button>
+                       <button onclick="setOperator('+')">+</button>
+                   </div>
+                   <div>
+                       <button onclick="appendToCalculator(4)">4</button>
+                       <button onclick="appendToCalculator(5)">5</button>
+                       <button onclick="appendToCalculator(6)">6</button>
+                       <button onclick="setOperator('-')">-</button>
+                   </div>
+                   <div>
+                       <button onclick="appendToCalculator(1)">1</button>
+                       <button onclick="appendToCalculator(2)">2</button>
+                       <button onclick="appendToCalculator(3)">3</button>
+                       <button onclick="setOperator('*')">*</button>
+                   </div>
+                   <div>
+                       <button onclick="appendToCalculator(0)">0</button>
+                       <button onclick="clearCalculator()">C</button>
+                       <button onclick="calculateResult()">=</button>
+                       <button onclick="setOperator('/')">/</button>
+                   </div>
+               </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <!-- Fan Modal -->
+   <div class="modal fade" id="fanModal" tabindex="-1" aria-labelledby="fanModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <h5 class="modal-title" id="fanModalLabel">Kontrol Kipas Angin</h5>
+                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                   <p>Klik tombol untuk menghidupkan atau mematikan kipas angin:</p>
+                   <button class="btn btn-success" onclick="toggleFan()">Aktifkan Kipas</button>
+                   <p id="fanStatus" class="fan-status">Kipas Angin: MATI</p>
+               </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <!-- Scripts -->
+   <script src="js/bootstrap.bundle.js"></script>
+   <script>
+       // Kalkulator
+       let currentInput = "";
+       let firstOperand = null;
+       let secondOperand = null;
+       let operator = null;
+
+       function appendToCalculator(value) {
+           currentInput += value;
+           document.getElementById('calcResult').innerText = currentInput;
+       }
+
+       function clearCalculator() {
+           currentInput = "";
+           document.getElementById('calcResult').innerText = "0";
+       }
+
+       function setOperator(op) {
+           if (firstOperand === null) {
+               firstOperand = parseFloat(currentInput);
+               currentInput = "";
+               operator = op;
+           }
+       }
+
+       function calculateResult() {
+           if (operator !== null) {
+               secondOperand = parseFloat(currentInput);
+               let result;
+               switch (operator) {
+                   case '+':
+                       result = firstOperand + secondOperand;
+                       break;
+                   case '-':
+                       result = firstOperand - secondOperand;
+                       break;
+                   case '*':
+                       result = firstOperand * secondOperand;
+                       break;
+                   case '/':
+                       result = firstOperand / secondOperand;
+                       break;
+               }
+               document.getElementById('calcResult').innerText = result;
+               currentInput = result.toString();
+               firstOperand = null;
+               operator = null;
+               secondOperand = null;
+           }
+       }
+
+       // Konversi Suhu
+       function convertTemperature() {
+           const tempValue = parseFloat(document.getElementById('tempInput').value);
+           const unit = document.getElementById('tempUnit').value;
+           let result;
+           if (unit === "celsius") {
+               result = {
+                   fahrenheit: (tempValue * 9/5) + 32,
+                   kelvin: tempValue + 273.15
+               };
+           } else if (unit === "fahrenheit") {
+               result = {
+                   celsius: (tempValue - 32) * 5/9,
+                   kelvin: (tempValue - 32) * 5/9 + 273.15
+               };
+           } else if (unit === "kelvin") {
+               result = {
+                   celsius: tempValue - 273.15,
+                   fahrenheit: (tempValue - 273.15) * 9/5 + 32
+               };
+           }
+           document.getElementById('conversionResult').innerHTML =
+               `Celsius: ${result.celsius.toFixed(2)}<br>Fahrenheit: ${result.fahrenheit.toFixed(2)}<br>Kelvin: ${result.kelvin.toFixed(2)}`;
+       }
+
+       // Kipas Angin
+       let fanOn = false;
+
+       function toggleFan() {
+           fanOn = !fanOn;
+           const status = document.getElementById('fanStatus');
+           status.innerText = fanOn ? "Kipas Angin: HIDUP" : "Kipas Angin: MATI";
+       }
+
+        // Status lampu, awalnya mati
+        let lampuStatus = [false, false, false, false, false]; // lampu1 hingga lampu5
+
+        // Fungsi untuk mengubah status lampu
+        function updateLampuStatus() {
+            // Loop melalui semua lampu dan sesuaikan dengan status
+            for (let i = 0; i < lampuStatus.length; i++) {
+                const lampu = document.getElementById('lampu' + (i + 1));
+                if (lampuStatus[i]) {
+                    lampu.classList.add('nyala');
+                    lampu.classList.remove('mati');
+                } else {
+                    lampu.classList.add('mati');
+                    lampu.classList.remove('nyala');
+                }
+            }
+        }
+
+        // Fungsi untuk menyalakan lampu seri
+        function nyalakanLampu() {
+            lampuStatus = [true, true, true, true, true]; // Semua lampu menyala
+            updateLampuStatus();
+        }
+
+        // Fungsi untuk mematikan lampu seri
+        function matikanLampu() {
+            lampuStatus = [false, false, false, false, false]; // Semua lampu mati
+            updateLampuStatus();
+        }
+
+        // Event listener untuk tombol nyalakan
+        document.getElementById('toggleBtn').addEventListener('click', nyalakanLampu);
+
+        // Event listener untuk tombol matikan
+        document.getElementById('toggleBtn2').addEventListener('click', matikanLampu);
+
+   </script>
+</body>
+</html>
